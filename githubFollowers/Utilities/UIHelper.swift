@@ -1,10 +1,3 @@
-//
-//  UIHelper.swift
-//  githubFollowers
-//
-//  Created by MacBook on 14.08.2023.
-//
-
 import UIKit
 
 struct UIHelper {

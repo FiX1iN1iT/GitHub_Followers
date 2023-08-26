@@ -1,8 +1,8 @@
 //
-//  ErrorMessage.swift
+//  GFError.swift
 //  githubFollowers
 //
-//  Created by MacBook on 06.08.2023.
+//  Created by MacBook on 25.08.2023.
 //
 
 import Foundation
