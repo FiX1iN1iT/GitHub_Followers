@@ -1,10 +1,3 @@
-//
-//  GFButton.swift
-//  githubFollowers
-//
-//  Created by MacBook on 18.07.2023.
-//
-
 import UIKit
 
 class GFButton: UIButton {
@@ -33,5 +26,11 @@ class GFButton: UIButton {
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
+    func set(backgroundColor: UIColor, title: String) {
+        self.backgroundColor = backgroundColor
+        setTitle(title, for: .normal)
     }
 }
