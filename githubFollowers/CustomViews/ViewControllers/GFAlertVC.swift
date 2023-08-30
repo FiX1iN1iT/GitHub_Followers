@@ -1,10 +1,3 @@
-//
-//  GFAlertVC.swift
-//  githubFollowers
-//
-//  Created by MacBook on 23.07.2023.
-//
-
 import UIKit
 
 class GFAlertVC: UIViewController {
