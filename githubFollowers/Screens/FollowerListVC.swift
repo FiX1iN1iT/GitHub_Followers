@@ -4,22 +4,35 @@ protocol FollowerListVCDelegate: class {
     func didRequestFollowers(for username: String)
 }
 
-class FollowerListVC: UIViewController {
+class FollowerListVC: GFDataLoadingVC {
     
     enum Section {
         case main
     }
     
     var username: String!
-    var followers = [Follower]()
-    var filteredFollowers = [Follower]()
-    var page = 1
-    var hasMoreFollowers = true
-    var isSearching = false
+    var followers           = [Follower]()
+    var filteredFollowers   = [Follower]()
+    var page                = 1
+    var hasMoreFollowers    = true
+    var isSearching         = false
     
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
+    
+    
+    init(username: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.username   = username
+        title           = username
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +70,11 @@ class FollowerListVC: UIViewController {
     
     func configureSearchController() {
         let searchController = UISearchController()
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search for a username"
-        searchController.obscuresBackgroundDuringPresentation = false
-        navigationItem.searchController = searchController
+        searchController.searchResultsUpdater                   = self
+        searchController.searchBar.delegate                     = self
+        searchController.searchBar.placeholder                  = "Search for a username"
+        searchController.obscuresBackgroundDuringPresentation   = false
+        navigationItem.searchController                         = searchController
     }
     
     

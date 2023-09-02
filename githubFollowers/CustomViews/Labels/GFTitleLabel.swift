@@ -1,10 +1,3 @@
-//
-//  GFTitleLabel.swift
-//  githubFollowers
-//
-//  Created by MacBook on 23.07.2023.
-//
-
 import UIKit
 
 class GFTitleLabel: UILabel {
@@ -19,19 +12,18 @@ class GFTitleLabel: UILabel {
     }
     
     
-    init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
-        super.init(frame: .zero)
-        self.textAlignment = textAlignment
-        self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
-        configure()
+    convenience init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
+        self.init(frame: .zero)
+        self.textAlignment  = textAlignment
+        self.font           = UIFont.systemFont(ofSize: fontSize, weight: .bold)
     }
     
     
     private func configure() {
-        textColor = .label
-        adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.9
-        lineBreakMode = .byTruncatingTail
+        textColor                   = .label
+        adjustsFontSizeToFitWidth   = true
+        minimumScaleFactor          = 0.9
+        lineBreakMode               = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }
     

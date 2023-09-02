@@ -1,6 +1,6 @@
 import UIKit
 
-class FavoritesListVC: UIViewController {
+class FavoritesListVC: GFDataLoadingVC {
     
     let tableView = UITableView()
     var favorites = [Follower]()
@@ -67,8 +67,8 @@ extension FavoritesListVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCell.reuseID) as! FavoriteCell
-        let favorite = favorites[indexPath.row]
+        let cell        = tableView.dequeueReusableCell(withIdentifier: FavoriteCell.reuseID) as! FavoriteCell
+        let favorite    = favorites[indexPath.row]
         cell.set(favorite: favorite)
         
         return cell
@@ -76,10 +76,8 @@ extension FavoritesListVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let favorite = favorites[indexPath.row]
-        let destVC = FollowerListVC()
-        destVC.username = favorite.login
-        destVC.title = favorite.login
+        let favorite    = favorites[indexPath.row]
+        let destVC      = FollowerListVC(username: favorite.login)
         
         navigationController?.pushViewController(destVC, animated: true)
     }

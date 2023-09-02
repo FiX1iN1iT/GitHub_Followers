@@ -1,10 +1,3 @@
-//
-//  GFSecondaryTitleLabel.swift
-//  githubFollowers
-//
-//  Created by MacBook on 25.08.2023.
-//
-
 import UIKit
 
 class GFSecondaryTitleLabel: UILabel {
@@ -19,10 +12,9 @@ class GFSecondaryTitleLabel: UILabel {
     }
     
     
-    init(fontSize: CGFloat) {
-        super.init(frame: .zero)
+    convenience init(fontSize: CGFloat) {
+        self.init(frame: .zero)
         font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
-        configure()
     }
     
     

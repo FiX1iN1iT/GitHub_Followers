@@ -1,10 +1,3 @@
-//
-//  User.swift
-//  githubFollowers
-//
-//  Created by MacBook on 06.08.2023.
-//
-
 import Foundation
 
 struct User: Codable {
@@ -18,5 +11,5 @@ struct User: Codable {
     let htmlUrl: String
     let following: Int
     let followers: Int
-    let createdAt: String
+    let createdAt: Date
 }
