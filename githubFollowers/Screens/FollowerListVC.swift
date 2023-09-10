@@ -1,9 +1,5 @@
 import UIKit
 
-protocol FollowerListVCDelegate: class {
-    func didRequestFollowers(for username: String)
-}
-
 class FollowerListVC: GFDataLoadingVC {
     
     enum Section {
@@ -198,7 +194,7 @@ extension FollowerListVC: UISearchResultsUpdating {
 }
 
 
-extension FollowerListVC: FollowerListVCDelegate {
+extension FollowerListVC: UserInfoVCDelegate {
     
     func didRequestFollowers(for username: String) {
         self.username   = username
