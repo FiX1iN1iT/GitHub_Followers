@@ -1,15 +1,15 @@
 import UIKit
 
+enum ItemInfoType {
+    case repos, gists, followers, following
+}
+
 class GFItemInfoView: UIView {
     
-    enum ItemInfoType {
-        case repos, gists, followers, following
-    }
-    
-    
     let symbolImageView = UIImageView()
-    let titleLabel = GFTitleLabel(textAlignment: .left, fontSize: 14)
-    let countLabel = GFTitleLabel(textAlignment: .center, fontSize: 14)
+    let titleLabel      = GFTitleLabel(textAlignment: .left, fontSize: 14)
+    let countLabel      = GFTitleLabel(textAlignment: .center, fontSize: 14)
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +27,7 @@ class GFItemInfoView: UIView {
         
         symbolImageView.translatesAutoresizingMaskIntoConstraints = false
         symbolImageView.contentMode = .scaleAspectFill
-        symbolImageView.tintColor = .label
+        symbolImageView.tintColor   = .label
         
         NSLayoutConstraint.activate([
             symbolImageView.topAnchor.constraint(equalTo: self.topAnchor),

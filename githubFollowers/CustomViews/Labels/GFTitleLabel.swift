@@ -7,6 +7,7 @@ class GFTitleLabel: UILabel {
         configure()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -26,5 +27,4 @@ class GFTitleLabel: UILabel {
         lineBreakMode               = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }
-    
 }
