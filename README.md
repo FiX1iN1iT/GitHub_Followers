@@ -1,5 +1,5 @@
 # GitHub_Followers
-GitHub_Followers is an iOS app, which allows you to search for a GitHub user and get all his followers.
+GitHub Followers is an iOS app, which allows you to search for a GitHub user and get all his followers.
 
 ## Features
 * 100% UIKit
